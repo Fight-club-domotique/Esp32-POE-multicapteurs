@@ -13,8 +13,8 @@ Matériel utilisé:
    
 ```yaml
 substitutions:
-  name: olimex-esp32-poe-iso
-  friendly_name: Bluetooth Proxy
+  name: olimex-esp32-poe-iso-706000
+  friendly_name: Bluetooth Proxy 706000
 
 esp32:
   board: esp32dev
@@ -30,7 +30,7 @@ esphome:
   friendly_name: ${friendly_name}
 api:
   encryption:
-    key: xxx
+    key: cleDeCryptage # à modifer
 
 ethernet:
   type: LAN8720
@@ -42,9 +42,9 @@ ethernet:
   phy_addr: 0
   power_pin: GPIO12
   manual_ip:
-    static_ip: xx:xx:xx:xx
-    gateway: xx:xx:xx:xx
-    subnet: xx:xx:xx:xx
+    static_ip: adresseIp # à modifer
+    gateway: passerelle # à modifer
+    subnet: sousReseau # à modifer
 
 i2c:
   sda: 13
@@ -87,7 +87,7 @@ logger:
 
 esp32_ble_tracker:
   scan_parameters:
-    interval: 15s
+    duration: 30s
     active: true
 
 bluetooth_proxy:
@@ -95,17 +95,17 @@ bluetooth_proxy:
 
 binary_sensor:
   - platform: ble_presence
-    mac_address: xx:xx:xx:xx:xx:xx
-    name: "M1"
+    mac_address: adresseMAC1 # à modifer
+    name: "Mi_band_1"
     timeout: 30s # le temps avant que ca passe en absent
-    min_rssi: -70dB # permet de regler la distance de detection
-    id: M1
+    min_rssi: -70dB # permet de regler la "distance" de detection
+    id: Mi_band_1  
   - platform: ble_presence
-    mac_address: xx:xx:xx:xx:xx:xx
-    name: "M2"
+    mac_address: adresseMAC2 # à modifer
+    name: "Mi_band_2"
     timeout: 30s # le temps avant que ca passe en absent
-    min_rssi: -70dB # permet de regler la distance de detection
-    id: M2
+    min_rssi: -70dB # permet de regler la "distance" de detection
+    id: Mi_band_2
   - platform: status
     name: "Status"
   - platform: ld2410
@@ -129,6 +129,7 @@ uart:
 
 ld2410:
   uart_id: ld2410_uart
+#  throttle: 1500ms
   id: ld2410_comp
 
 number:
@@ -200,8 +201,8 @@ sensor:
     name: "Uptime Raw"
     id: uptime_sensor
   - platform: ble_rssi
-    mac_address: xx:xx:xx:xx:xx:xx
-    name: "Mi_band Min RSSI"
+    mac_address: adresseMAC1 # à modifer
+    name: "Mi_band_laurent Min RSSI"
 
   - platform: ld2410
     moving_distance:
@@ -266,14 +267,14 @@ sensor:
   - platform: dht
     pin: 33
     temperature:
-      name: "Temperature"
+      name: "Temperature1"
       accuracy_decimals: 2
       device_class: "temperature"
       filters:
-        - offset: -0.1
+        - offset: offset # à modifer si besoin
 
     humidity:
-      name: "Humidite"
+      name: "Humidite1"
       accuracy_decimals: 2
       device_class: "humidity"
     update_interval: 20s
