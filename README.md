@@ -16,7 +16,6 @@ Généralités
 Ce code est prévu pour ESPHome, une solution qui permet de créer un firmware personnalisé pour les microcontrôleurs compatibles avec Home Assistant.
 Le module utilisé est l’Olimex ESP32-POE-ISO, qui a la particularité de se connecter via Ethernet et d'intégrer des fonctionnalités avancées pour la domotique et la détection de présence Bluetooth.
 Substitutions & Généralités
-
     substitutions: Définit des variables réutilisables (name, friendly_name) pour faciliter la maintenance et la personnalisation.
     esp32 : Spécifie la carte (esp32dev) et le framework (esp-idf) utilisé.
     esphome : Nom du projet, suffixe du nom désactivé, nom convivial.
