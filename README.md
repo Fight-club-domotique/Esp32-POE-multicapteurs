@@ -332,7 +332,7 @@ sensor:
       accuracy_decimals: 2
       device_class: "temperature"
       filters:
-        - offset: offset # à modifer si besoin
+        - offset: offset 0.0 # à modifer si besoin
 
     humidity:
       name: "Humidite1"
