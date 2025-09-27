@@ -84,13 +84,13 @@ binary_sensor:
     mac_address: adresseMAC1 # à modifer
     name: "Mi_band_1"
     timeout: 30s # le temps avant que ca passe en absent
-    min_rssi: -70dB # permet de regler la distance de detection
+    min_rssi: -70dB # permet de regler la "distance" de detection
     id: Mi_band_1  
   - platform: ble_presence
     mac_address: adresseMAC2 # à modifer
     name: "Mi_band_2"
     timeout: 30s # le temps avant que ca passe en absent
-    min_rssi: -70dB # permet de regler la distance de detection
+    min_rssi: -70dB # permet de regler la "distance" de detection
     id: Mi_band_2
   - platform: status
     name: "Status"
