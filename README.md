@@ -148,7 +148,7 @@ logger:
 
 esp32_ble_tracker:
   scan_parameters:
-    duration: 30s
+    interval: 15s
     active: true
 
 bluetooth_proxy:
