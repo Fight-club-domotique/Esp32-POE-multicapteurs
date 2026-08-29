@@ -107,7 +107,7 @@ binary_sensor:
 
 uart:
   id: ld2410_uart
-  tx_pin: 32
+  tx_pin: 4
   rx_pin: 36
   baud_rate: 256000
   parity: NONE
